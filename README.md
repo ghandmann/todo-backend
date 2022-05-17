@@ -40,3 +40,25 @@ Auf Clientseite wird die standard Browser-API für [Websockets](https://develope
 Die Tests können mit `npm test` ausgeführt werden.
 
 Während der Entwicklung können die Tests im sogenannten "watch mode" ausgeführt werden: `npm test -- -w`. Dadurch wird bei jedem speichern automatisch der Test ausgeführt.
+
+## Testabdeckung
+
+Zusätzlich zu den Tests, kann auch die sog. Testabdeckung ermittelt werden. Dazu kann einfach das Kommando `npm run cover` verwendet werden. Danach findet sich in `./coverage/index.html` ein sog. coverage report. Dieser zeigt auf, welche Zeilen des Quellcodes durch die Ausführung der Tests erreicht wurden.
+
+## Notizen für die Live Session
+* Tests zeigen
+    * lokal ausführen
+    * watch mode
+    * Fehler provozieren
+* Lokal neuen Branch erzeugen
+    * "Fehlerhafte" Änderung durchführen
+    * Commiten und pushen
+    * Pull-Request auf GitHub erzeugen
+    * Pipeline-Ergebnis zeigen
+    * Fehler beheben
+    * CodeReview
+    * Merge in `main`
+* Testabdeckung zeigen
+    * `npx nyc mocha`
+    * `npm run cover`
+    * Coverage-Report in `./coverage` zeigen
