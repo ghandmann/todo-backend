@@ -30,3 +30,9 @@ Serverseitig wird das Node.JS Modul [ws](https://www.npmjs.com/package/ws) einge
 ## Client
 
 Auf Clientseite wird die standard Browser-API für [Websockets](https://developer.mozilla.org/de/docs/Web/API/WebSocket) verwendet.
+
+## Tests
+
+Die Tests können mit `npm test` ausgeführt werden.
+
+Während der Entwicklung können die Tests im sogenannten "watch mode" ausgeführt werden: `npm test -- -w`. Dadurch wird bei jedem speichern automatisch der Test ausgeführt.

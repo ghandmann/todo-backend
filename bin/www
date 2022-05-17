@@ -1,0 +1,13 @@
+const app = require("../app");
+const { websocketServer } = require("../websocketserver");
+
+var server = app.listen(3000);
+server.on("upgrade", (request, socket, head) => {
+    console.log('Handling upgrade request');
+
+    websocketServer.handleUpgrade(request, socket, head, (ws) => {
+        websocketServer.emit('connection', ws, request);
+    });
+});
+
+server.on("listening", () => console.log("Server ready on http://localhost:3000"));
