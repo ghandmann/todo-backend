@@ -62,3 +62,4 @@ Zusätzlich zu den Tests, kann auch die sog. Testabdeckung ermittelt werden. Daz
     * `npx nyc mocha`
     * `npm run cover`
     * Coverage-Report in `./coverage` zeigen
+    * Coverage-Report in Workflow-Artifacts zeigen
