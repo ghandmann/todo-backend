@@ -1,5 +1,9 @@
 # Todo-Backend mit WebSockets
 
+**HINWEIS**: Dieses Repository enthält eine Beispielanwendung für die Vorlesung "Web Anwendungen 2" an der Hochschule Albstadt-Sigmaringen.
+
+Ziel ist es, zeitgemäße Softwareentwicklungszyklen mithilfe von git, GitHub, Softwaretests, CI/CD-Pipelines, Feature-Branches, CodeReviews und PullRequests aufzuzeigen.
+
 ## Starten
 
 ```shell
