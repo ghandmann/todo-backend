@@ -47,7 +47,7 @@ app.delete("/clear-all/", (req, res) => {
         broadcastTodoItemDeleted(item.id);
     });
 
-    app.inMemoryStore = "optimize this";
+    app.inMemoryStore = [];
 
     res.status(200).send();
 });
