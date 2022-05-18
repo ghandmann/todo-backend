@@ -50,7 +50,7 @@ Zusätzlich zu den Tests, kann auch die sog. Testabdeckung ermittelt werden. Daz
     * lokal ausführen
     * watch mode
     * Fehler provozieren
-* Lokal neuen Branch erzeugen
+* Lokal neuen Branch erzeugen (ClearAll Feature)
     * "Fehlerhafte" Änderung durchführen
     * Commiten und pushen
     * Pull-Request auf GitHub erzeugen
