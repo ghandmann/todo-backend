@@ -30,7 +30,7 @@ describe("GET /todo-item/", () => {
         res.should.have.status(200);
 
         res.body.should.be.an('array');
-        res.body.should.have.length(0);
+        res.body.should.have.length(2);
     });
 });
 
