@@ -42,16 +42,6 @@ app.delete("/todo-items/:todoItemId", (req, res) => {
     res.status(200).send();
 });
 
-app.delete("/clear-all/", (req, res) => {
-    app.inMemoryStore.forEach(item => {
-        broadcastTodoItemDeleted(item.id);
-    });
-
-    app.inMemoryStore = [];
-
-    res.status(200).send();
-});
-
 websocketServer.on('connection', (clientWebsocket) => {
     console.log("new websocket client connected.");
 

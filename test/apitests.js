@@ -36,12 +36,11 @@ describe("GET /todo-item/", () => {
 
 describe("POST /todo-items/", () => {
     it("should add item to the in memory store", async () => {
-        var res = await chai.request(app).post("/todo-items/")
-            .send({ "text": "my new todo item", "id": "4711" });
+        var res = await chai.request(app).post("/todo-items/").send({ "text": "my new todo item", "id": "4711" });
 
         res.should.have.status(200);
-
         app.inMemoryStore.should.have.length(1);
+
         app.inMemoryStore[0].text.should.equal("my new todo item");
         app.inMemoryStore[0].id.should.equal("4711");
     });
@@ -59,26 +58,11 @@ describe("DELETE /todo-items/:id", () => {
         app.inMemoryStore.should.be.empty;
     });
 
-    it("should delete nothing with wrong id", async () => {
+    it("should delete nothing with wron id", async () => {
         var res = await chai.request(app).del("/todo-items/some-unkown-id");
 
         res.should.have.status(200);
 
         app.inMemoryStore.should.have.length(1);
     });
-});
-
-describe("DELETE /clear-all/", () => {
-    beforeEach(() => app.inMemoryStore = [
-        { "text": "dummy todo item 1", "id": "abc" },
-        { "text": "dummy todo item 2", "id": "xyz" }
-    ]);
-
-
-    it("should wipe all todo items", async () => {
-        const res = await chai.request(app).delete("/clear-all/");
-
-        res.should.have.status(200);
-        app.inMemoryStore.should.be.empty;
-    });
-});
+})
