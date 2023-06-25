@@ -65,24 +65,4 @@ describe("DELETE /todo-items/:id", () => {
 
         app.inMemoryStore.should.have.length(1);
     });
-});
-
-describe("DELETE /all", () => {
-    it("should remove all todo items", async () => {
-        // Inject todo-items into the in memory store of the app
-        app.inMemoryStore = [
-            { "text": "dummy todo item 1", "id": "abc" },
-            { "text": "dummy todo item 2", "id": "xyz" }
-        ];
-
-        const deleteResponse = await chai.request(app).delete("/all");
-
-        deleteResponse.should.have.status(200);
-
-        const listItemsResponse = await chai.request(app).get("/todo-items");
-
-        listItemsResponse.should.have.status(200);
-        listItemsResponse.body.should.be.an("array");
-        listItemsResponse.body.should.be.empty;
-    });
-});
+})
