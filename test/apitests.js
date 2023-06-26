@@ -66,3 +66,16 @@ describe("DELETE /todo-items/:id", () => {
         app.inMemoryStore.should.have.length(1);
     });
 })
+
+describe("DELETE /all", () => {
+    // Make sure there is an entry in the store
+    beforeEach(() => app.inMemoryStore = [{ "text": "delete me", "id": "4711" }]);
+
+    it("should delete all todo-items", async () => {
+        var res = await chai.request(app).del("/all");
+
+        res.should.have.status(200);
+
+        app.inMemoryStore.should.be.empty;
+    });
+})
