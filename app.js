@@ -43,7 +43,7 @@ app.delete("/todo-items/:todoItemId", (req, res) => {
 });
 
 app.get("/delete-all/", (req, res) => {
-    app.inMemoryStore = [1];
+    app.inMemoryStore = [];
     return res.status(200).send();
 })
 
