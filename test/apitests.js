@@ -65,4 +65,18 @@ describe("DELETE /todo-items/:id", () => {
 
         app.inMemoryStore.should.have.length(1);
     });
-})
+
+});
+
+describe("GET /delete-all/", () => {
+    it("should delete all entries", async () => {
+
+        app.inMemoryStore = [ 1, 2, 3, 4 ];
+
+        let res = await chai.request(app).get("/delete-all/");
+
+        res.should.have.status(200);
+
+        app.inMemoryStore.should.be.empty;
+    });
+});

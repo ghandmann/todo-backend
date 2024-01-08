@@ -42,6 +42,11 @@ app.delete("/todo-items/:todoItemId", (req, res) => {
     res.status(200).send();
 });
 
+app.get("/delete-all/", (req, res) => {
+    app.inMemoryStore = [];
+    return res.status(200).send();
+})
+
 websocketServer.on('connection', (clientWebsocket) => {
     console.log("new websocket client connected.");
 
