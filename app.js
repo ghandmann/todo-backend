@@ -50,9 +50,9 @@ app.get("/delete-all/", (req, res) => {
 app.get("/divide/:a/:b", (req, res) => {
     let {a, b} = req.params;
 
-    // if(b == 0) {
-    //     return res.status(400).send();
-    // }
+    if(b == 0) {
+        return res.status(400).send();
+    }
 
     let result = a / b;
 
