@@ -47,6 +47,19 @@ app.get("/delete-all/", (req, res) => {
     return res.status(200).send();
 })
 
+app.get("/divide/:a/:b", (req, res) => {
+    let {a, b} = req.params;
+
+    if(b == 0) {
+        return res.status(400).send();
+    }
+
+    let result = a / b;
+
+    res.type("text/plain");
+    res.send(result + "");
+});
+
 websocketServer.on('connection', (clientWebsocket) => {
     console.log("new websocket client connected.");
 
