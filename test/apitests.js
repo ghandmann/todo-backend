@@ -74,5 +74,12 @@ describe("DELETE /all", () => {
         var res = await chai.request(app).del("/all");
 
         res.should.have.status("200");
+
+        const res2 = await chai.request(app).get("/todo-items/");
+
+        res2.should.have.status(200);
+
+        res2.body.should.be.an('array');
+        res2.body.should.be.empty;
     });
 });
