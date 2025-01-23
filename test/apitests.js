@@ -67,32 +67,3 @@ describe("DELETE /todo-items/:id", () => {
     });
 
 });
-
-describe("GET /delete-all/", () => {
-    it("should delete all entries", async () => {
-
-        app.inMemoryStore = [ 1, 2, 3, 4 ];
-
-        let res = await chai.request(app).get("/delete-all/");
-
-        res.should.have.status(200);
-
-        app.inMemoryStore.should.be.empty;
-    });
-});
-
-describe("GET /divide/", () => {
-    it("should return bad request on division by zero", async () => {
-        let res = await chai.request(app).get("/divide/10/0");
-
-        res.should.have.status(400);
-    });
-
-    it("should do the math", async () => {
-        let res = await chai.request(app).get("/divide/10/5");
-
-        res.should.have.status(200);
-        res.text.should.be.a("string");
-        res.text.should.equal('2');
-    });
-})

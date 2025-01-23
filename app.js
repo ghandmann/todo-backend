@@ -17,6 +17,7 @@ app.inMemoryStore = [];
 
 // Gibt Liste aller TodoItem zurück
 app.get("/todo-items/", (req, res) => {
+    res.status(200);
     res.send(app.inMemoryStore);
 });
 
@@ -42,23 +43,6 @@ app.delete("/todo-items/:todoItemId", (req, res) => {
     res.status(200).send();
 });
 
-app.get("/delete-all/", (req, res) => {
-    app.inMemoryStore = [];
-    return res.status(200).send();
-})
-
-app.get("/divide/:a/:b", (req, res) => {
-    let {a, b} = req.params;
-
-    if(b == 0) {
-        return res.status(400).send();
-    }
-
-    let result = a / b;
-
-    res.type("text/plain");
-    res.send(result + "");
-});
 
 websocketServer.on('connection', (clientWebsocket) => {
     console.log("new websocket client connected.");
