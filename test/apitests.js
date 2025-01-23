@@ -67,3 +67,12 @@ describe("DELETE /todo-items/:id", () => {
     });
 
 });
+
+
+describe("DELETE /all", () => {
+    it("should delete all entries", async () => {
+        var res = await chai.request(app).del("/all");
+
+        res.should.have.status("200");
+    });
+});
