@@ -67,3 +67,27 @@ describe("DELETE /todo-items/:id", () => {
     });
 
 });
+
+
+describe("DELETE /all", () => {
+    it("should delete all entries", async () => {
+        // Setup
+        app.inMemoryStore = [
+            { "text": "dummy todo item 1", "id": "abc" },
+            { "text": "dummy todo item 2", "id": "xyz" }
+        ];
+        const todoItemsResponse = await chai.request(app).get("/todo-items/");
+        todoItemsResponse.body.should.be.an("array");
+        todoItemsResponse.body.should.have.length(2);
+
+        // Act
+        var res = await chai.request(app).del("/all");
+        res.should.have.status("200");
+
+        // Validate
+        const emptyTodoItemsResponse = await chai.request(app).get("/todo-items/");
+        emptyTodoItemsResponse.should.have.status(200);
+        emptyTodoItemsResponse.body.should.be.an('array');
+        emptyTodoItemsResponse.body.should.be.empty;
+    });
+});
