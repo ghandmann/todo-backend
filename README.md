@@ -63,3 +63,7 @@ Zusätzlich zu den Tests, kann auch die sog. Testabdeckung ermittelt werden. Daz
     * `npm run cover`
     * Coverage-Report in `./coverage` zeigen
     * Coverage-Report in Workflow-Artifacts zeigen
+
+## Maintainer
+
+- Sven Eppler
