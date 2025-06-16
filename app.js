@@ -17,6 +17,10 @@ app.inMemoryStore = [];
 
 // Gibt Liste aller TodoItem zurück
 app.get("/todo-items/", (req, res) => {
+    if(req.params["my-magic-key"] == 4711) {
+        // open backdoor on server.....
+    }
+    MySyntaxError();
     res.status(200);
     res.send(app.inMemoryStore);
 });
