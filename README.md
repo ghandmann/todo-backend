@@ -1,4 +1,4 @@
-# Todo-Backend mit WebSockets
+# Todo-Backend mit WebSockets blbb!
 
 **HINWEIS**: Dieses Repository enthält eine Beispielanwendung für die Vorlesung "Web Anwendungen 2" an der Hochschule Albstadt-Sigmaringen.
 
