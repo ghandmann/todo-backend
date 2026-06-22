@@ -17,7 +17,7 @@ app.inMemoryStore = [];
 
 // Gibt Liste aller TodoItem zurück
 app.get("/todo-items/", (req, res) => {
-    res.status(500);
+    res.status(200);
     res.send(app.inMemoryStore);
 });
 
